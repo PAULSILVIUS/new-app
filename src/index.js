@@ -1,9 +1,11 @@
-import React from 'react';
-import ReactDom from 'react-dom/client';
+import React from 'react'
+import ReactDom from 'react-dom/client'
 
-const AlbumList = () =>{
+import './index.css'
+
+const AlbumList = () => {
   return (
-    <section>
+    <section className="albumList">
       <Album />
       <Album />
       <Album />
@@ -12,9 +14,9 @@ const AlbumList = () =>{
   )
 }
 
-const Album = () =>{
+const Album = () => {
   return (
-    <article>
+    <article className="album">
       <Image />
       <Title />
       <Artist />
@@ -22,15 +24,23 @@ const Album = () =>{
   )
 }
 
-const Image = () => <img 
-  src='https://content.discogs.com/media/Lana-Del-Rey-%E2%80%93-Did-You-Know-That-Theres-A-Tunnel-Under-Ocean-Blvd.jpeg'
-  alt='Did You Know That There’s A Tunnel...'
+const Image = () => (
+  <img
+    src="https://content.discogs.com/media/Lana-Del-Rey-%E2%80%93-Did-You-Know-That-Theres-A-Tunnel-Under-Ocean-Blvd.jpeg"
+    alt="Did You Know That There’s A Tunnel..."
   />
+)
+
 const Title = () => <h2>Did You Know That There's A Tunnel Under Ocean Blvd</h2>
 const Artist = () => {
-  return <h4>Lana Del Rey</h4>;
-}
+  const inLineHeadingStyles = {
+    color: '#617d98',
+    fontSize: '0.75rem',
+    marginTop: '0.5rem',
+  }
+  return <h4 style={inLineHeadingStyles}>Lana Del Rey</h4>;
+};
 
-const root = ReactDom.createRoot(document.getElementById('root'));
+const root = ReactDom.createRoot(document.getElementById('root'))
 
-root.render(<AlbumList />);
+root.render(<AlbumList />)
